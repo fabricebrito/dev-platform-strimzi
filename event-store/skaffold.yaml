@@ -1,0 +1,19 @@
+apiVersion: skaffold/v4beta9
+kind: Config
+metadata:
+  name: event-store
+deploy:
+  helm:
+    releases:
+      - name: kafka-event-store
+        chartPath: .
+        namespace: kafka
+        valuesFiles:
+          - values.yaml
+
+portForward:
+- resourceType: service
+  resourceName: kafka-ui-service-kafka-event-store
+  namespace: kafka 
+  port: 8080 
+  localPort: 8000 

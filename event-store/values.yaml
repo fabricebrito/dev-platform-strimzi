@@ -1,0 +1,8 @@
+# -- kafka event store name
+kafkaEventStoreName: "event-store"
+kafkaVersion: "3.8.0"
+brokerProtocolVersion: "3.8"
+persistenceVolumeSize: "10Gi"
+# -- kafka user interface
+ui: 
+  enabled: true

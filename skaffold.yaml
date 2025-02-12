@@ -1,0 +1,11 @@
+apiVersion: skaffold/v4beta9
+kind: Config
+metadata:
+  name: dev-platform-strimzi
+requires:
+  - configs:
+    - "kafka-operator"
+    path: "kafka-operator/skaffold.yaml"
+  - configs:
+    - "event-store"
+    path: "event-store/skaffold.yaml"
